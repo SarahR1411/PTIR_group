@@ -5,7 +5,7 @@ import time
 #ip2 = "10.10.4.1"    # enp0s8 de VM2
 
 ip1 = "192.168.1.154"  # enp0s3 de VM2
-ip2 = "192.168.1.47"    # enp0s8 de VM2
+ip2 = "192.168.11.47"    # enp0s8 de VM2
 
 def send_ping(dest_ip, iface):
     timestamp = time.time()

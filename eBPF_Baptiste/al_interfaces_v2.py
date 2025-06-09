@@ -23,7 +23,7 @@ interface_labels = {
 
 infected_ips = {
     "154.1.168.192": True,
-    "47.1.168.192": True
+    "47.11.168.192": True
 }
 """
 infected_ips = {
@@ -89,7 +89,7 @@ for iface in interfaces:
 print("Surveillance active. Ctrl-C pour arreter.")
 
 def check_lateral_movement(ip, current_machine, current_ts):
-    if ip == "47.1.168.192":
+    if ip == "47.11.168.192":
         ip = "154.1.168.192"
     #print ("C'est quoi ip history ? ", ip_history)
     history = ip_history[ip]
