@@ -22,10 +22,15 @@ interface_labels = {
 }
 
 infected_ips = {
+    "154.1.168.192": True,
+    "47.1.168.192": True
+}
+"""
+infected_ips = {
     "86.16.56.10": True,
     "1.4.10.10": True
 }
-
+"""
 bpf_c = """
 #include <linux/if_ether.h>
 #include <linux/ip.h>
@@ -84,8 +89,8 @@ for iface in interfaces:
 print("Surveillance active. Ctrl-C pour arreter.")
 
 def check_lateral_movement(ip, current_machine, current_ts):
-    if ip == "1.4.10.10":
-        ip = "86.16.56.10"
+    if ip == "47.1.168.192":
+        ip = "154.1.168.192"
     #print ("C'est quoi ip history ? ", ip_history)
     history = ip_history[ip]
     #print ("machine courante : ", ip, current_machine, current_ts)

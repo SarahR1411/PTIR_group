@@ -10,7 +10,7 @@ from datetime import datetime
 from threading import Thread, Event
 
 # Configuration
-IP = ["10.56.16.86", "10.10.4.1"]
+IP = ["192.168.1.154", "192.168.1.47"]
 CONDITIONS = ["Avant programme", "Après kernel", "Après userspace"]
 PING_COUNT = 200
 INTERVAL = 0.1

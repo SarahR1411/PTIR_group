@@ -6,8 +6,12 @@ import threading
 import psutil
 
 # Configuration
-IP1 = "10.56.16.86"
-IP2 = "10.10.4.1"
+
+#IP1 = "10.56.16.86"
+#IP2 = "10.10.4.1"
+
+IP1 = "192.168.1.154"
+IP2 = "192.168.1.47"
 INTERFACES = ["enp0s3", "enp0s8"]
 NORMAL_TRAFFIC_DURATION = 20
 ATTACK_DURATION = 5

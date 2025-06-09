@@ -23,8 +23,8 @@ interface_labels = {
 }
 
 infected_ips = {
-    "10.56.16.86": True,
-    "10.10.4.1": True
+    "192.168.1.154": True,
+    "192.168.1.47": True
 }
 
 class TrafficSniffer:
@@ -37,8 +37,8 @@ class TrafficSniffer:
 #Détermine si c'est un mouvement latéral ou pas
     def check_lateral_movement(self, ip, current_machine, current_ts):
         with self.lock:
-            if ip == "10.10.4.1":
-                ip = "10.56.16.86"
+            if ip == "192.168.1.47":
+                ip = "192.168.1.154"
                 
             history = ip_history[ip]
             
