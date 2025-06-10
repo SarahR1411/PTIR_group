@@ -31,6 +31,7 @@ sudo python3 latency_vide.py
 ```
 
 #### b) Lancer l'attaque dans un nouvel onglet
+On peut modifier les paramètres du script d'attaque variation_debit.sh afin de diminuer la durée des tests (par exemple en mettant REPEAT_COUNT à 1 ou lieu de 10, en diminuant la durée de test, qui est à l'origine de 10s ou en diminuant le temps de pause entre les différentes séries de mesures, qui est par défaut de 30s.)
 
 ```bash
 cd traffic_generation

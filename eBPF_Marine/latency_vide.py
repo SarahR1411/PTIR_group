@@ -13,7 +13,7 @@ b = None
 # Création du dossier pour les logs CSV
 os.makedirs("./latency_data", exist_ok=True)
 
-csv_file = open("./latency_data/latency_log.csv", mode='w', newline='')
+csv_file = open("./latency_vide_data/latency_vide_log.csv", mode='w', newline='')
 csv_writer = csv.writer(csv_file)
 csv_writer.writerow(["timestamp", "latency_us"])
 
@@ -22,11 +22,11 @@ def cleanup(signum=None, frame=None):
     try:
         if b:
             b.remove_xdp(device)
-            print(f"[✓] XDP détaché de {device}")
+            print(f"XDP détaché de {device}")
     except Exception as e:
         print(f"[!] Erreur nettoyage: {e}")
     csv_file.close()
-    print("Données enregistrées dans './latency_data/latency_log.csv'")
+    print("Données enregistrées dans './latency_vide_data/latency_vide_log.csv'")
     sys.exit(0)
 
 def clear_maps():
@@ -47,8 +47,8 @@ def main():
     parser = argparse.ArgumentParser(description="Mesure de la latence réseau en CSV")
     args = parser.parse_args()
 
-    b = BPF(src_file="latency.c")
-    fn = b.load_func("xdp_latency", BPF.XDP)
+    b = BPF(src_file="latency_vide.c")
+    fn = b.load_func("xdp_latency_vide", BPF.XDP)
     b.attach_xdp(device, fn, 0)
     clear_maps()
     print(f"XDP attaché à {device}")
@@ -66,7 +66,7 @@ def main():
 
         # conversion en microsecondes
         latency_us = (total_latency_ns / count) / 1000 if count else 0
-        print(f"[INFO] Latence moyenne : {latency_us:.2f} µs")
+        #print(f"[INFO] Latence moyenne : {latency_us:.2f} µs")
 
         ts = int(time.time())
         csv_writer.writerow([ts, f"{latency_us:.2f}"])
