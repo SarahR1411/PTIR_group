@@ -61,8 +61,8 @@ Deux campagnes sont fournies :
 ## 4. Compilation des workloads
 
 ```
-gcc -O2 test_app.c  -o test_app
-gcc -O2 test_app2.c -o test_app2
+gcc test_app.c  -o test_app
+gcc test_app2.c -o test_app2
 ```
 
 ## 5. Exécution des programmes Python 
@@ -98,8 +98,8 @@ sudo python3 monitor2.py
 - Calcule :
   - **Overhead** : temps instrumenté / temps baseline
 - Écrit deux graphes :
-  - `with_errorbars.png`   # Moyenne + écart-type
-  - `no_errorbars.png`     # Moyenne seule
+  - `with_errorbars.png`   # Moyenne de la surcharge + écart-type
+  - `no_errorbars.png`     # Moyenne de la surcharge seule
 
 ## 6. Personnalisation & extensions
 
